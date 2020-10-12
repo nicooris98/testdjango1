@@ -2,6 +2,7 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
 from django.template import loader
+from django.shortcuts import render
 
 ruta="E:/NICO/Informatica/Django/test1/test1/"
 
@@ -21,10 +22,11 @@ def saludo(request):#primera vista
     #doc_externo=open(ruta+"plantillas/plantilla1.html")
     #plt=Template(doc_externo.read())
     #doc_externo.close()
-    doc_externo=loader.get_template('plantilla1.html')
-    #=Context({"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
-    documento=doc_externo.render({"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
-    return HttpResponse(documento)
+    #doc_externo=loader.get_template('plantilla1.html')
+    #ctx=Context({"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
+    #documento=doc_externo.render({"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
+    #return HttpResponse(documento)
+    return render(request, "plantilla1.html", {"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
 
 def despedida(request):
     return HttpResponse("Adios")
@@ -53,4 +55,10 @@ def calculaEdad(request, edad, ano):
     </body>
     </html>""" %(ano, edadFutura)
     return HttpResponse(documento)
-    
+
+def cursoC(request):
+    fecha_actual=datetime.datetime.now()
+    return render(request, "cursoC.html", {"dameFecha":fecha_actual})
+
+def cursoCss(request):
+     return render(request, "cursoCss.html")    
