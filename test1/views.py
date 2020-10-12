@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
+from django.template import loader
 
 ruta="E:/NICO/Informatica/Django/test1/test1/"
 
@@ -14,13 +15,15 @@ def saludo(request):#primera vista
     #documento="<html><body><h1>Primera Pagina Django</h1></body></html>"
     #nombre="Ysidoro"
     #apellido="Oris"
+    temas=["Plantillas", "Modelos", "Formularios", "Vistas", "Despliegue"]
     p1=Persona("Nicolas Ysidoro", "Oris")
     ahora=datetime.datetime.now()
-    doc_externo=open(ruta+"plantillas/plantilla1.html")
-    plt=Template(doc_externo.read())
-    doc_externo.close()
-    ctx=Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "momento_actual":ahora})
-    documento=plt.render(ctx)
+    #doc_externo=open(ruta+"plantillas/plantilla1.html")
+    #plt=Template(doc_externo.read())
+    #doc_externo.close()
+    doc_externo=loader.get_template('plantilla1.html')
+    #=Context({"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
+    documento=doc_externo.render({"nombre_persona": p1.nombre, "apellido_persona": p1.apellido, "momento_actual":ahora, "temas": temas})
     return HttpResponse(documento)
 
 def despedida(request):

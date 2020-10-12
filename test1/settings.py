@@ -54,7 +54,7 @@ ROOT_URLCONF = 'test1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['E:/NICO/Informatica/Django/test1/test1/plantillas/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

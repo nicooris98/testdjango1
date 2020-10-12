@@ -9,5 +9,16 @@
     <h2>Mi primera plantilla</h2>
     <p>El nombre del alumno es: {{nombre_persona}} {{apellido_persona}}</p>
     <p>Fecha y hora actual: {{momento_actual}}</p>
+    <!--<p>{{temas.1}}</p>-->
+    <p><strong>Temas del Curso:</strong></p>
+    <ul>
+    {%if temas%}
+        {%for t in temas%}
+            <li>{{t}}</li>
+        {%endfor%}
+    {%else%}
+        <p>No hay elementos que mostrar</p>
+    {%endif%}
+    </ul>
 </body>
 </html>
