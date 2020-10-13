@@ -21,6 +21,10 @@ Crear apps:
 Crear la base de datos(sqlite3):
   1. Ubicarse en la ruta del proyecto
   2. python manage.py makemigrations
+  3. En la consola dira 'nombre_app\migrations\num_initial.py' donde num en num_initial.py es un numero que servira en los siguientes pasos
+  4. python manage.py sqlmigrate nombre_app num
+  5. En consola se veran todas las instrucciones sql que crean todas las tablas
+  6. python manage.py migrate
 
 Agregar la ruta de las plantillas:
   1. Ir a settins.py y ubicar TEMPLATES
