@@ -1,6 +1,10 @@
 # testdjango1
 prueba con django y git
 
+Crear el proyecto:
+  1. Ubicarse en la ruta donde queremos que este
+  2. django-admin startproject nombre_proyecto
+
 Arrancar servidor:
   1. Ubicarse en la ruta del proyecto
   2. python manage.py runserver
