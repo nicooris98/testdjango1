@@ -12,6 +12,15 @@ Arrancar servidor:
 Crear apps:
   1. Ubicarse en la ruta del proyecto
   2. python manage.py startapp nombre_app
+  3. El comando anterior crea una carpeta con el nombre que pusimos
+  4. Ir a la carpeta de la app y luego a models.py
+  5. Crear las clases que seran las tablas de la base de datos
+  6. Agregar la app en settings.py en la parte de INSTALLED_APPS
+  7. (Opcional) Para chequear que todo este bien python manage.py check nombre_app y si esta todo bien deberia salir System check identified no issues (0 silenced)
+
+Crear la base de datos(sqlite3):
+  1. Ubicarse en la ruta del proyecto
+  2. python manage.py makemigrations
 
 Agregar la ruta de las plantillas:
   1. Ir a settins.py y ubicar TEMPLATES
