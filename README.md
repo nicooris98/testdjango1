@@ -34,3 +34,17 @@ Agregar una pagina:
   1. Agreagar el documento html en la carpeta plantillas
   2. Crear la vista en views.py
   3. Importar la vista creada en urls.py y agregar el path
+  
+Para usar Postgres:
+  1. Tener python3.8, postgres y crear la base de datos
+  2. Configurar settings
+  3. pip install psycopg2
+  4. python manage.py makemigrations
+  5. python manage.py migrate
+  5. Con eso se crea las tablas
+  
+Insertar cosas con postgres desde el shell:
+  1. python manage.py shell
+  2. from "app".models import "model"
+  3. valor="model"(clave, 'valor', ...)
+  4. valor.save()
